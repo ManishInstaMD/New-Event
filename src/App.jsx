@@ -9,6 +9,7 @@ import EventWebinarPage from "./components/EventWebinarPage";
 import EventDetails from "./components/EventDetails";
 import RegistrationForm from "./components/RegistrationForm";
 import  Speaker from './components/Speaker'
+import  AboutPage from './components/AboutPage'
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/speakers" element={<Speaker />} /> {/* Placeholder for speakers page */}
         <Route path="/events" element={<EventDetails />} />
         <Route path="/liveEvents" element={<EventWebinarPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer />
     </div>
