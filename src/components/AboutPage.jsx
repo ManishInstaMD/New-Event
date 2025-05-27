@@ -7,7 +7,7 @@ function AboutPage() {
       <Container>
         <Row className="justify-content-center mb-4">
           <Col lg={8} className="text-center">
-            <h1 className="display-5 fw-bold text-primary fade-in-up">
+            <h1 className="display-5 fw-bold text-primary fade-in-up" style={{ fontSize: "2.5rem", lineHeight: "1.2",color: "#3494CC" }}>
               About ExpertOnBoard
             </h1>
             <h5 className="lead text-muted fade-in-up delay-1">
@@ -81,7 +81,7 @@ function AboutPage() {
           </Col>
           <Col md={6}>
             <img
-              src="/images/moto3.jpg"
+              src="/images/moto5.jpg"
               alt="Our Motive"
               className="img-fluid rounded shadow zoom-hover"
             />
