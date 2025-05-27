@@ -50,7 +50,7 @@ const Speaker = () => {
   return (
     <section className="py-12" style={{ background: "#E1EBF1" }}>
       <div className="text-center mb-10">
-        <h2 className="text-2xl font-bold text-white">Speakers</h2>
+        <h2 className="text-2xl font-bold" style={{ color: "#0F93CA" }}>Speakers</h2>
         <h5 className="text-gray-600 mt-2">
           Proud to bring inspirational speakers to our conference.
         </h5>

@@ -7,7 +7,7 @@ function AboutPage() {
       <Container>
         <Row className="justify-content-center mb-4">
           <Col lg={8} className="text-center">
-            <h1 className="display-5 fw-bold text-primary fade-in-up" style={{ fontSize: "2.5rem", lineHeight: "1.2",color: "#3494CC" }}>
+            <h1 className="display-5 fw-bold  fade-in-up" style={{ fontSize: "2.5rem", lineHeight: "1.2",color: "#0F93CA" }}>
               About ExpertOnBoard
             </h1>
             <h5 className="lead text-muted fade-in-up delay-1">

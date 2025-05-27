@@ -152,7 +152,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="md:flex justify-between text-center text-sm text-gray-600 border-t border-gray-300 pt-4">
           <p className="mb-2 md:mb-0">
-            &copy; {new Date().getFullYear()} InstaMD Technology. All rights reserved.
+            &copy; {new Date().getFullYear()} Desinged and Developed By InstaMD. All rights reserved.
           </p>
           <div className="flex justify-center gap-4">
             <span
