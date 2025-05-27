@@ -8,7 +8,7 @@ const speakers = [
     image: "/images/m5.jpeg",
   },
   {
-    name: "Mr. Devesh Gangan ",
+    name: "Mr. Devesh Gangani ",
     title: "Oncologist",
     bio: "Associate General Manager at Alkem Laboratories Ltd.",
     image: "/images/m6.jpeg",

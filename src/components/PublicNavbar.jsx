@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import logo from "/images/instamd_logo.PNG";
+import logo from "/images/expert.png"; 
 
 const PublicNavbar = () => {
   return (
@@ -15,8 +15,9 @@ const PublicNavbar = () => {
           <img
             src={logo}
             alt="InstaMD Logo"
-            width="55"
-            height="55"
+            width="65"
+            height="65"
+            className="rounded-circle bg-white p-0 border border-primary"
             // className="rounded-circle  border-2 border-primary p-1"
           />
           {/* <span className="fs-5 text-primary d-none d-md-inline">InstaMD</span> */}
