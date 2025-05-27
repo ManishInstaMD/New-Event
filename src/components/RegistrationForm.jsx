@@ -54,7 +54,7 @@ const RegistrationForm = () => {
           mobile: "",
           email: "",
         });
-        navigate("/events");
+         navigate("/liveEvents");
       } else {
         toast.error(result.message || "Registration failed");
       }
