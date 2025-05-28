@@ -99,13 +99,17 @@ const RegistrationForm = () => {
               style={{
                 fontSize: "1.5rem",
                 fontWeight: "bold",
-                color: "#8FBBCE",
+                color: "#ffffff",
+                backgroundColor: "#9C9C9C",
                 textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
+                padding: "0.75rem",
+                borderRadius: "0.5rem",
                 marginBottom: "1.5rem",
               }}
             >
               Register for the Event
             </h4>
+
             <form>
               {[
                 { name: "name", label: "Your Name" },

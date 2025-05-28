@@ -9,7 +9,7 @@ const EventDetails = () => {
       dateTime: "2025-06-07T11:00:00",
       Mode: "Online Event",
       eventLink: "https://www.youtube.com/watch?v=qJvclEApNrE",
-     coverImages: ["/images/meeting.jpg", "/images/meeting.jpg", "/images/meeting.jpg", "/images/meeting.jpg"],
+     coverImages: ["/images/meeting3.avif", "/images/meeting4.jpg"],
     },
     {
       title: "Digital Transformation in Pharma Industry",
@@ -19,7 +19,7 @@ const EventDetails = () => {
       dateTime: "2025-05-17T11:00:00",
       Mode: "Online Event",
       eventLink: "https://www.youtube.com/watch?v=VlmDT_8YyH0&t=2s",
-      coverImages: ["/images/meeting2.jpg", "/images/meeting2.jpg", "/images/meeting2.jpg", "/images/meeting2.jpg"],
+      coverImages: ["/images/meeting5.png", "/images/meeting6.png"],
     },
   ];
 
