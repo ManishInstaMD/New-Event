@@ -51,8 +51,8 @@ const Home = () => {
                   textAlign: window.innerWidth < 768 ? "center" : "left",
                 }}
               >
-                About our{" "}
-                <span style={{ fontFamily: "Harrington" }}> #PitchPoint.</span>
+                About our #PitchPoint.
+                {/* {" "} { <span style={{ fontFamily: "Harrington" }}> #PitchPoint.</span> } */}
               </h1>
               <p
                 className="lead p-2 p-md-4 m-2 text-white"

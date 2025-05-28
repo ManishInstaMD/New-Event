@@ -3,26 +3,26 @@ import React from "react";
 const speakers = [
   {
     name: "Dr. Subhojit Mukherjee",
-    title: "Cardiologist",
-    bio: "Head Of India Formulations At Celsius Healthcare Pvt. Ltd",
+    title: "Head Of India Formulations",
+    bio: " At Celsius Healthcare Pvt. Ltd",
     image: "/images/m5.jpeg",
   },
   {
     name: "Mr. Devesh Gangani ",
-    title: "Oncologist",
-    bio: "Associate General Manager at Alkem Laboratories Ltd.",
+    title: "Associate General Manager ",
+    bio: "At Alkem Laboratories Ltd.",
     image: "/images/m6.jpeg",
   },
   {
     name: "Dr. Pramod Kumar Rajput",
-    title: "Neurologist",
-    bio: "Global Leadership Coach| Pharma Business Leader | Author | Sr. Vice President (F.) At Cadila Pharma",
+    title: "Global Leadership Coach | Pharma Business Leader | Author ",
+    bio: " Sr. Vice President (F.) At Cadila Pharma",
     image: "/images/m7.jpeg",
   },
   {
     name: "Dr. ICS Varma",
-    title: "Neurologist",
-    bio: "Co-Founder Of Regson Healthcare | Live Pharma Coalition| ExpertOnBoard.",
+    title: "Co-Founder Of Regson Healthcare ",
+    bio: " Live Pharma Coalition | ExpertOnBoard.",
     image: "/images/m4.jfif",
   },
 ];
@@ -54,7 +54,7 @@ const FeaturedSpeakers = () => {
               <h3 className="text-xl font-semibold text-gray-800">
                 {speaker.name}
               </h3>
-              {/* <p className="text-sm text-indigo-600 mb-2">{speaker.title}</p> */}
+              <p className="text-sm text-indigo-600 mb-2">{speaker.title}</p>
               <p className="text-gray-600 text-sm">{speaker.bio}</p>
             </div>
           </div>
