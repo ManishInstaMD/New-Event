@@ -31,7 +31,7 @@ const PublicNavbar = () => {
               alt="Logo"
               width="70"
               height="70"
-              className="rounded-circle bg-white border border-primary"
+              className="bg-white border border-primary"
             />
           </Navbar.Brand>
 
@@ -70,26 +70,20 @@ const PublicNavbar = () => {
         </Container>
       </Navbar>
 
+      {/* Mobile Drawer */}
       <Offcanvas
         show={showDrawer}
         onHide={closeDrawer}
         placement="end"
-        className="offcanvas-half-width"
+        className="w-50" // This sets the width to 50%
       >
-        <Offcanvas.Header closeButton>
+        <Offcanvas.Header closeButton closeVariant="white" className="bg-primary text-white">
           <Offcanvas.Title>
-            <img
-              src={logo}
-              alt="Logo"
-              width="50"
-              height="50"
-              className="rounded-circle me-2"
-            />
-            ExpertOnBoard
+            <span>ExpertOnBoard</span>
           </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          <Nav className="flex-column">
+        <Offcanvas.Body className="p-3">
+          <Nav className="flex-column gap-2">
             {navLinks.map(({ to, label }) => (
               <Nav.Link
                 key={to}
@@ -97,8 +91,8 @@ const PublicNavbar = () => {
                 to={to}
                 onClick={closeDrawer}
                 className={({ isActive }) =>
-                  `fw-semibold nav-custom mb-2 ${
-                    isActive ? "text-primary active-nav" : "text-dark"
+                  `fw-semibold nav-custom p-3 rounded ${
+                    isActive ? "bg-primary text-white" : "text-dark"
                   }`
                 }
               >
@@ -114,7 +108,7 @@ const PublicNavbar = () => {
         .nav-custom {
           font-size: 1.05rem;
           position: relative;
-          transition: color 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
         }
 
         .nav-custom::after {
@@ -138,6 +132,13 @@ const PublicNavbar = () => {
 
         .nav-custom:hover {
           color: #0d6efd;
+        }
+
+        /* Make drawer half width on mobile */
+        @media (max-width: 991.98px) {
+          .offcanvas {
+            width: 50% !important;
+          }
         }
       `}</style>
     </>

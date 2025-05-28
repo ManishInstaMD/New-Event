@@ -20,7 +20,7 @@ function ContactUs() {
         style={{ maxWidth: "600px" }}
       >
         <h2 className="display-5 fw-bold text-white mb-3">
-          Contact Us <span className="text-warning">#PitchPoint</span>
+          Contact Us <span className="text-warning" style={{ fontSize: "2.5 rem" , fontStyle: "italic", color: "#0F93CA"}} >#PitchPoint</span>
         </h2>
         <p className="lead text-light">
           Interested in our events or have questions? We’d love to hear from

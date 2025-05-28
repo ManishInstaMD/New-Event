@@ -52,6 +52,7 @@ const Home = () => {
                 }}
               >
                 About our #PitchPoint.
+                {/* <span style={{ fontStyle: "italic" }}>#PitchPoint.</span> */}
                 {/* {" "} { <span style={{ fontFamily: "Harrington" }}> #PitchPoint.</span> } */}
               </h1>
               <p

@@ -12,7 +12,7 @@ const ConferenceInfo = () => {
         viewport={{ once: true }}
         className="max-w-5xl mx-auto px-6 text-white text-center"
       >
-        <h2 className="text-[80px] leading-[1.2] font-bold">The Conference</h2>
+        <h2 className="text-[80px] leading-[1.2] font-bold">The #PitchPoint</h2>
         <h5 className="text-[22px] tracking-wider mt-2">
           Not just a pitch. It's a turning point.
         </h5>
