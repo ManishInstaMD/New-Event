@@ -10,6 +10,7 @@ import {
   GeoAltFill,
   HeartFill,
   ArrowRight,
+  ArrowUpRight
 } from "react-bootstrap-icons";
 
 const Footer = () => {
@@ -28,17 +29,17 @@ const Footer = () => {
           <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <h5 className="uppercase font-bold mb-4 flex items-center gap-3 text-indigo-700">
               <img
-                src="/images/elogo.jfif"
+                src="/images/ee1.PNG"
                 alt="InstaMD Logo"
-                width="50"
-                className="rounded-full bg-white p-1 border border-indigo-200"
+                // width="50"
+                className=" bg-white p-1"
               />
-              <img
+              {/* <img
                 src="/images/instamd_logo.PNG"
                 alt="InstaMD Text Logo"
                 className="w-12 h-12 rounded-full bg-white p-1 border border-indigo-200"
-              />
-              <span>Let's Connect</span>
+              /> */}
+              {/* <span>Let's Connect</span> */}
             </h5>
             <p className="text-gray-600 mb-4">
               Connecting together with top medical professionals through

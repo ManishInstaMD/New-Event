@@ -1,50 +1,43 @@
 import React from "react";
+import { FaArrowUp } from "react-icons/fa";
 
 const speakers = [
   {
     name: "Dr. Subhojit Mukherjee",
     title: "Head Of India Formulations",
-    bio: " At Celsius Healthcare Pvt. Ltd",
+    bio: "Celsius Healthcare Pvt. Ltd",
     image: "/images/m5.jpeg",
   },
   {
-    name: "Mr. Devesh Gangani ",
-    title: "Associate General Manager ",
-    bio: "At Alkem Laboratories Ltd.",
+    name: "Mr. Devesh Gangani",
+    title: "Associate General Manager",
+    bio: "Alkem Laboratories Ltd.",
     image: "/images/m6.jpeg",
   },
   {
     name: "Dr. Pramod Kumar Rajput",
-    title: "Global Leadership Coach | Pharma Business Leader | Author ",
-    bio: " Sr. Vice President (F.) At Cadila Pharma",
-    image: "/images/m7.jpeg",
-  },
-  {
-    name: "Dr. ICS Varma",
-    title: "Co-Founder Of Regson Healthcare ",
-    bio: " Live Pharma Coalition | ExpertOnBoard.",
-    image: "/images/m4.jfif",
+    title: "Global Leadership Coach | Pharma Business Leader",
+    bio: "Sr. Vice President (F.) At Cadila Pharma",
+    image: "/images/m10.jpg",
   },
   {
     name: "Anil fernandez",
-    title:
-      "Founder - SLIM (Strategy, Leadership, Innovation, Marketing) Solutions Visiting Faculty",
-    bio: " NMIMS and Corporate Mentor - SIESCOMS",
+    title: "Founder ",
+    bio: " - SLIM (Strategy, Leadership, Innovation, Marketing) Solutions Visiting Faculty",
     image: "/images/m1.jfif",
     className: "rounded-full",
   },
   {
     name: "Thamburaj Anthuvan ",
-    title: "Senior Vice President -Sales",
-    bio: "Marketing & Digital Transformation ,BU Head, SFE, L&D, USV PVT LTD | PhD Scholar in Pharma Marketing AI & SFE Expert | Researcher & Peer Reviewer | Industry Mentor | Athlete & Artist",
+    title: "Senior Vice President ",
+    bio: " USV PVT LTD ",
     image: "/images/m2.jfif",
   },
   {
     name: "Devdutt Kaushal ",
-    title:
-      "Associate Director Business Development Commercial manager LATAM Countries at Cipla",
-    bio: " P&L, Product Launches, Cardio-Uro Therapy Strategy",
-    image: "/images/m3.jfif",
+    title: "Associate Director Business Development Commercial manager ",
+    bio: "  LATAM Countries at Cipla",
+    image: "/images/m11.jpg",
   },
 ];
 
@@ -52,12 +45,15 @@ const Speaker = () => {
   return (
     <section className="py-12" style={{ background: "#d7dde2" }}>
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-extrabold text-gray-800 tracking-tight">
-          <span style={{ color: "#0F93CA" }}>Speakers</span>
+        <h2
+          className="text-3xl font-extrabold tracking-tight"
+          style={{ color: "#0F93CA" }}
+        >
+          Speakers
         </h2>
-        <p className="text-gray-600 mt-2 text-lg">
+        <h5 className="text-gray-600 mt-2" style={{ fontStyle: "italic" }}>
           Proud to bring inspirational speakers to our conference.
-        </p>
+        </h5>
       </div>
 
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto px-4">
