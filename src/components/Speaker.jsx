@@ -9,7 +9,7 @@ const speakers = [
     image: "/images/m5.jpeg",
   },
   {
-    name: "Mr. Devesh Gangani",
+    name: "Devesh Gangani",
     title: "Associate General Manager",
     bio: "Alkem Laboratories Ltd.",
     image: "/images/m6.jpeg",
@@ -18,7 +18,7 @@ const speakers = [
     name: "Dr. Pramod Kumar Rajput",
     title: "Global Leadership Coach | Pharma Business Leader",
     bio: "Sr. Vice President (F.) At Cadila Pharma",
-    image: "/images/m10.jpg",
+    image: "/images/m14.jpeg",
   },
   {
     name: "Anil fernandez",
@@ -38,6 +38,12 @@ const speakers = [
     title: "Associate Director Business Development Commercial manager ",
     bio: "  LATAM Countries at Cipla",
     image: "/images/m11.jpg",
+  },
+  {
+    name: "Dr. ICS Varma ",
+    title: "Co-Founder Of Regson Healthcare  ",
+    bio: "  Live Pharma Coalition| ExpertOnBoard ",
+    image: "/images/m4.jfif",
   },
 ];
 

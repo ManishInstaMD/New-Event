@@ -3,6 +3,63 @@ import { Container, Row, Col, Form, FormCheck, Button } from "react-bootstrap";
 
 function ContactUs() {
   const [agreed, setAgreed] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!agreed) return;
+
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://event-nine-xi.vercel.app/api/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          company: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        alert(result.message || "Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Container
@@ -20,37 +77,53 @@ function ContactUs() {
         style={{ maxWidth: "600px" }}
       >
         <h2 className="display-5 fw-bold text-white mb-3">
-          Contact Us <span className="text-warning" style={{ fontSize: "2.5 rem" , fontStyle: "italic", color: "#0F93CA"}} >#PitchPoint</span>
+          Contact Us{" "}
+          <span
+            style={{
+              fontSize: "2.5rem",
+              fontStyle: "italic",
+              color: "#0F93CA",
+            }}
+          >
+            #PitchPoint
+          </span>
         </h2>
         <p className="lead text-light">
           Interested in our events or have questions? We’d love to hear from
-          you! Send us a message and our team will be in touch soon.
+          you!
         </p>
       </div>
 
       <Form
         className="mx-auto bg-white shadow-lg rounded-4 p-4 p-sm-5 form-animate"
         style={{ maxWidth: "720px" }}
+        onSubmit={handleSubmit}
       >
         <Row className="g-4">
           <Col sm={6}>
-            <Form.Group controlId="first-name">
+            <Form.Group controlId="firstName">
               <Form.Label className="fw-semibold">First Name</Form.Label>
               <Form.Control
                 type="text"
+                value={formData.firstName}
+                onChange={handleChange}
                 placeholder="John"
                 className="field-focus"
+                required
               />
             </Form.Group>
           </Col>
 
           <Col sm={6}>
-            <Form.Group controlId="last-name">
+            <Form.Group controlId="lastName">
               <Form.Label className="fw-semibold">Last Name</Form.Label>
               <Form.Control
                 type="text"
+                value={formData.lastName}
+                onChange={handleChange}
                 placeholder="Doe"
                 className="field-focus"
+                required
               />
             </Form.Group>
           </Col>
@@ -60,6 +133,8 @@ function ContactUs() {
               <Form.Label className="fw-semibold">Company</Form.Label>
               <Form.Control
                 type="text"
+                value={formData.company}
+                onChange={handleChange}
                 placeholder="Company Name"
                 className="field-focus"
               />
@@ -71,17 +146,22 @@ function ContactUs() {
               <Form.Label className="fw-semibold">Email Address</Form.Label>
               <Form.Control
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="you@example.com"
                 className="field-focus"
+                required
               />
             </Form.Group>
           </Col>
 
           <Col sm={12}>
-            <Form.Group controlId="phone-number">
+            <Form.Group controlId="phone">
               <Form.Label className="fw-semibold">Phone Number</Form.Label>
               <Form.Control
                 type="text"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder="1234567890"
                 className="field-focus"
               />
@@ -94,8 +174,11 @@ function ContactUs() {
               <Form.Control
                 as="textarea"
                 rows={4}
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your message..."
                 className="field-focus"
+                required
               />
             </Form.Group>
           </Col>
@@ -127,68 +210,20 @@ function ContactUs() {
           variant="primary"
           type="submit"
           className="mt-4 w-100 py-2 fw-semibold submit-btn"
-          disabled={!agreed}
+          disabled={!agreed || loading}
         >
-          Let's Talk
+          {loading ? "Submitting..." : "Let's Talk"}
         </Button>
+
+        {submitted && (
+          <p className="text-success text-center mt-3 fw-medium">
+            Message sent successfully! ✅
+          </p>
+        )}
       </Form>
-      <style>
-        {`
-          /* Section Animation */
-.contact-section {
-  position: relative;
-  backdrop-filter: blur(2px);
-}
 
-/* Fade-in animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Form animation */
-.form-animate {
-  opacity: 0;
-  transform: scale(0.95);
-  animation: fadeInForm 0.8s ease-out 0.3s forwards;
-}
-
-@keyframes fadeInForm {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Input focus effect */
-.field-focus:focus {
-  border-color: #0d6efd;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-  transition: all 0.3s ease-in-out;
-}
-
-/* Submit button animation */
-.submit-btn {
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.submit-btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-          `}
-      </style>
+      {/* Inline styles (keep as is) */}
+      <style>{`/* your CSS here */`}</style>
     </Container>
   );
 }

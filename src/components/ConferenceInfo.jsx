@@ -16,15 +16,14 @@ const ConferenceInfo = () => {
         <h5 className="text-[22px] tracking-wider mt-2">
           Not just a pitch. It's a turning point.
         </h5>
-        <h6 className="text-[22px] mt-2">07 June 2025 | 11:00 am</h6>
-
+  
         <div className="mt-10 text-[16px] leading-[1.6] tracking-wide">
           <p className="mb-4">
             PitchPoint isn’t just another webinar it’s a front-row seat to the
             future of pharma sales and marketing.
           </p>
           <p>
-            Powered by InstaMD and presented by ExpertOnTalk, PitchPoint was
+            Powered by InstaMD and presented by ExpertOnBoard, PitchPoint was
             born from a simple yet powerful idea: to create a space where
             experience meets innovation, and real-world insights inspire action.
             Each session features leading voices from across the industry

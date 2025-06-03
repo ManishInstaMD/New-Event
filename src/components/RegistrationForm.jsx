@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { getDeviceInfo } from "../utils/GetDeviceInfo"
+
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ onEmailExists, onSuccess }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -16,6 +18,24 @@ const RegistrationForm = () => {
     mobile: "",
     email: "",
   });
+  const sendWhatsappWelcomeMessage = async (mobile) => {
+    try {
+      await fetch("https://event-nine-xi.vercel.app/api/send-whatsapp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: `91${mobile}`, // Add country code
+          template: {
+            name: "welcome_msg",
+            language: { code: "en" },
+          },
+        }),
+      });
+    } catch (err) {
+      console.error("WhatsApp message failed:", err);
+    }
+  };
+  
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -30,20 +50,25 @@ const RegistrationForm = () => {
     if (submitting) return;
     setSubmitting(true);
 
+    const deviceInfo = getDeviceInfo();
+    const payload = { ...formData, deviceInfo }; 
     try {
       const response = await fetch(
         "https://event-nine-xi.vercel.app/api/register",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(payload),
         }
       );
 
       const result = await response.json();
 
       if (response.ok) {
+        onSuccess();
         toast.success("Registration successful! 🎉", { autoClose: 5000 });
+        sendWhatsappWelcomeMessage(formData.mobile);
+        localStorage.setItem("user", JSON.stringify(formData));
         setFormData({
           name: "",
           companyName: "",
@@ -56,6 +81,12 @@ const RegistrationForm = () => {
         });
         navigate("/liveEvents");
       } else {
+        if (
+          response.status === 401 &&
+          result.message.includes("Email already exists")
+        ) {
+          if (onEmailExists) onEmailExists();
+        }
         toast.error(result.message || "Registration failed");
       }
     } catch (err) {
@@ -69,7 +100,7 @@ const RegistrationForm = () => {
   return (
     <>
       <ToastContainer />
-      <div className="container-fluid min-vh-100 d-flex flex-column flex-md-row p-0">
+      <div className="d-flex flex-column flex-md-row w-100">
         {/* Left image/illustration section */}
         <div
           className="w-100 w-md-50 d-flex flex-column justify-content-center align-items-center p-4 text-white"

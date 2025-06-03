@@ -8,7 +8,7 @@ const speakers = [
     image: "/images/m5.jpeg",
   },
   {
-    name: "Mr. Devesh Gangani",
+    name: "Devesh Gangani",
     title: "Associate General Manager",
     bio: "Alkem Laboratories Ltd.",
     image: "/images/m6.jpeg",
@@ -21,8 +21,7 @@ const speakers = [
   },
   {
     name: "Anil fernandez",
-    title:
-      "Founder ",
+    title: "Founder ",
     bio: " - SLIM (Strategy, Leadership, Innovation, Marketing) Solutions Visiting Faculty",
     image: "/images/m1.jfif",
     className: "rounded-full",
@@ -35,10 +34,15 @@ const speakers = [
   },
   {
     name: "Devdutt Kaushal ",
-    title:
-      "Associate Director Business Development Commercial manager ",
+    title: "Associate Director Business Development Commercial manager ",
     bio: "  LATAM Countries at Cipla",
     image: "/images/m11.jpg",
+  },
+  {
+    name: "Dr. ICS Varma ",
+    title: "Co-Founder",
+    bio: "  Regson Healthcare| Live Pharma Coalition| ExpertOnBoard ",
+    image: "/images/m4.jfif",
   },
 ];
 
